@@ -1,0 +1,56 @@
+✦ Harika seçim! Sanal Makine (VirtualBox) yöntemi, Tulpar OS'u inşa ederken gerçek bir bilgisayarın tüm donanımını (RAM,
+  İşlemci, Disk) simüle etmemizi sağlar. Hata payı en düşük ve en "profesyonel" yöntem budur.
+
+  İşte adım adım kurulum rehberiniz:
+
+  🛠️ Adım 1: Araçları İndirme
+
+  Şu an Windows tarayıcından şu iki dosyayı indir (ben buradan indirme başlatamam, senin indirmen gerekiyor):
+
+   1. VirtualBox (Program): Buradan indir
+      (https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-167084-Win.exe) (Windows hosts yazana tıkla).
+   2. Ubuntu ISO (İşletim Sistemi): Buradan indir (https://releases.ubuntu.com/24.04.1/ubuntu-24.04.1-desktop-amd64.iso)
+      (Ubuntu 24.04 LTS Desktop). Not: Yaklaşık 5 GB'tır, inmesi biraz sürebilir.
+
+  ---
+
+  📦 Adım 2: Sanal Makineyi Oluşturma
+
+  VirtualBox'ı kurduktan sonra aç ve şu ayarları yap:
+
+   1. Yeni (New) butonuna bas.
+   2. Ad: Tulpar_Factory yaz.
+   3. ISO Image: İndirdiğin Ubuntu ISO dosyasını seç.
+   4. Donanım (Hardware):
+       * Bellek (Base Memory): En az 4096 MB (4 GB) ver (Mümkünse yeşil alanın sonuna kadar).
+       * İşlemci (Processors): En az 2 çekirdek ver.
+   5. Disk (Hard Disk): En az 30 GB yer ayır (Dinamik olarak ayrılan seçeneği kalsın).
+   6. Bitir (Finish) de.
+
+  ---
+
+  🐧 Adım 3: Ubuntu Kurulumu
+
+  Sanal makineyi başlat (Start):
+
+   1. Karşına çıkan ekranda "Install Ubuntu" seçeneğini seç.
+   2. Klavye: Türkçe seçmeyi unutma.
+   3. Kurulum Tipi: "Normal Installation" kalsın. "Erase disk and install Ubuntu" seçeneğini seç (Bu sadece sanal diski
+      siler, senin Windows dosyalarına dokunmaz).
+   4. Kullanıcı Adı: tulpar
+   5. Şifre: Unutmayacağın basit bir şey yap (Örn: 1234).
+
+  ---
+
+  🚀 Adım 4: Tulpar OS Fabrikasını Hazırlama (Terminal)
+
+  Ubuntu kurulup masaüstü açıldığında, içindeki Terminal'i (Ctrl+Alt+T) aç ve şu "Büyülü Komutu" tek seferde kopyalayıp
+  yapıştır. Bu komut, Tulpar OS'u derlemek için gereken her şeyi saniyeler içinde kuracak:
+
+   1 sudo apt update && sudo apt install -y build-essential bison flex bc libssl-dev libelf-dev libncurses-dev kmod cpio xz-utils wget git python3 python3-pip python3-pyqt6
+
+  ---
+
+  ❓ Şu an hangi aşamadasın?
+  Dosyalar iniyor mu yoksa sanal makineyi kurmaya başladın mı? Kurulum bittiğinde bana haber ver, Tulpar OS'un kodlarını
+  sanal makinenin içine nasıl aktaracağımızı ve Kernel'i (çekirdeği) orada nasıl derleyeceğimizi anlatacağım!
